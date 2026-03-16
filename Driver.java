@@ -7,10 +7,10 @@ public class Driver {
 		
 		OVChipkaart ovChipkaart1 = new OVChipkaart(20.0);
 
-		System.out.println(ovChipkaart1.getSaldo());
+		System.out.println("Saldo: " + ovChipkaart1.getSaldo());
+		System.out.println("Kaartnummer: " + ovChipkaart1.getKaartNummer());
 		paal1.scan(ovChipkaart1);
-		System.out.println(ovChipkaart1.getKaartNummer());
-		System.out.println(ovChipkaart1.getSaldo());
+		System.out.println("Saldo: " + ovChipkaart1.getSaldo());
 
 	}
 }
