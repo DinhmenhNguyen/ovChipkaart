@@ -6,10 +6,10 @@ public class OVChipkaart {
 
 	LocalDate tijd = LocalDate.now();
 
-	private boolean geldigheid;
+	private boolean geldigheid = true;
 	private double saldo;
 	private boolean ingecheckt = false;
-	private int kaartNummer;
+	private int kaartNummer = 12498221;
 
 	public OVChipkaart(double saldo) {
 		this.geldigheid = true;
@@ -25,11 +25,11 @@ public class OVChipkaart {
 	}
 
 	public int getKaartNummer() {
-		return this.kaartNummer = 12498221;
+		return this.kaartNummer;
 	}
 	
 	public boolean getGeldigheid() {
-		return this.geldigheid = true;
+		return this.geldigheid;
 	}
 
 	public void checkIn(double instap) {
