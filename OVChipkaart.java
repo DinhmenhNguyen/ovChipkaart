@@ -15,7 +15,6 @@ public class OVChipkaart {
 		this.saldo = saldo;
 	}
 	
-	
 
 	public double getSaldo() {
 		return this.saldo;
