@@ -1,4 +1,4 @@
-package ovChipkaart;
+package OVChipkaart;
 
 public class Paal {
 

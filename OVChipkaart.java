@@ -1,4 +1,4 @@
-package ovChipkaart;
+package OVChipkaart;
 
 import java.time.LocalDate;
 
@@ -9,7 +9,7 @@ public class OVChipkaart {
 	private boolean geldigheid = true;
 	private double saldo;
 	private boolean ingecheckt = false;
-	private int kaartNummer = 12498221;
+	private int kaartNummer;
 
 	public OVChipkaart(double saldo) {
 		this.geldigheid = true;
@@ -27,7 +27,11 @@ public class OVChipkaart {
 	public int getKaartNummer() {
 		return this.kaartNummer;
 	}
-	
+
+	public int setKaartNummer(int kaartNummer) {
+		return this.kaartNummer = kaartNummer;
+	}
+
 	public boolean getGeldigheid() {
 		return this.geldigheid;
 	}
