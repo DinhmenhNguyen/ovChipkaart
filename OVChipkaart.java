@@ -9,6 +9,7 @@ public class OVChipkaart {
 	private boolean geldigheid = true;
 	private double saldo;
 	private boolean ingecheckt = false;
+	private Locatie oorsprong;
 	private int kaartNummer;
 
 	public OVChipkaart(double saldo) {
@@ -23,6 +24,10 @@ public class OVChipkaart {
 	public boolean getCheck() {
 		return this.ingecheckt;
 	}
+	
+	public Locatie getLocatie() {
+		return this.oorsprong;
+	}
 
 	public int getKaartNummer() {
 		return this.kaartNummer;
@@ -36,8 +41,9 @@ public class OVChipkaart {
 		return this.geldigheid;
 	}
 
-	public void checkIn(double instap) {
+	public void checkIn(double instap, Locatie l) {
 		this.ingecheckt = true;
+		this.oorsprong = l;
 		this.saldo = this.saldo - instap;
 	}
 }
