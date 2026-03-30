@@ -14,7 +14,7 @@ public class Paal {
 		if (ovChip.getSaldo() >= instap) {
 			if (ovChip.getGeldigheid() == true) {
 				System.out.println("Transactie gaat door, poort gaat open");
-				ovChip.checkIn(this.instap, locatie);
+				ovChip.checkIn(this.instap, this.locatie);
 				System.out.println(ovChip.getLocatie());
 				System.out.println("Ingecheckt = " + ovChip.getCheck());
 			} else {
@@ -24,9 +24,9 @@ public class Paal {
 		}
 	}
 	
-	public double tariefBerekenaar(Locatie l) {
-		int a = l.getX() - locatie.getX();
-		int b = l.getY() - locatie.getY();
+	public double tariefBerekenaar(Locatie lx, Locatie ly) {
+		int a = lx.getX() - locatie.getX();
+		int b = ly.getY() - locatie.getY();
 		int c = a*a + b*b;
 		double wortel = Math.sqrt(c);
 		return wortel;

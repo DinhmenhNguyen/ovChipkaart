@@ -17,4 +17,8 @@ public class Locatie {
 	public int getY() {
 		return this.y;
 	}
+
+	public String getNaam() {
+        return "Locatie: " + naam;
+    }
 }
