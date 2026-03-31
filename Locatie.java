@@ -1,24 +1,25 @@
 package OVChipkaart;
 
 public class Locatie {
-	private int x;
-	private int y;
-	private String naam;
+	private double x;
+	private double y;
+	private String locatie;
 	
-	public Locatie(int x, int y) {
+	public Locatie(double x, double y, String naam) {
 		this.x = x;
 		this.y = y;
+		this.locatie = naam;
 	}
 
-	public int getX() {
+	public double getX() {
 		return this.x;
 	}
 	
-	public int getY() {
+	public double getY() {
 		return this.y;
 	}
 
-	public String getNaam() {
-        return "Locatie: " + naam;
+	public String getLocatie(){
+        return this.locatie;
     }
 }

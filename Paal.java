@@ -1,34 +1,53 @@
 package OVChipkaart;
 
+import java.util.Scanner;
+
 public class Paal {
+
+	Scanner sc = new Scanner(System.in);
 
 	private double instap;
 	private Locatie locatie;
 
-	public Paal(double instap, Locatie locatie) {
-		this.instap = instap;
-		this.locatie = locatie;
+	public Paal(Locatie string) {
+		this.locatie = string;
 	}
 
-	public void scan(OVChipkaart ovChip) {
-		if (ovChip.getSaldo() >= instap) {
-			if (ovChip.getGeldigheid() == true) {
+	public void checkInScan(OVChipkaart ovChip) {
+		if (ovChip.getGeldigheid() == true) {
+			if (ovChip.getSaldo() >= 20.0 + this.instap) {
 				System.out.println("Transactie gaat door, poort gaat open");
 				ovChip.checkIn(this.instap, this.locatie);
-				System.out.println(ovChip.getLocatie());
-				System.out.println("Ingecheckt = " + ovChip.getCheck());
+				System.out.println("Kosten = €" + this.instap);
+				System.out.println(ovChip.getLocatie().getLocatie());
 			} else {
 				System.out.println("Transactie is gefaald, poort blijft dicht");
-				System.out.println("Ingecheckt = " + ovChip.getCheck());
 			}
 		}
 	}
-	
+
+	public void checkUitScan(OVChipkaart ovChip) {
+		if (ovChip.getLocatie() != this.locatie) {
+			if (ovChip.getGeldigheid() == true) {
+				System.out.println("Je bent uitgecheckt");
+			}
+		}
+	}
+
+	public Locatie getLocatie(Locatie locatie) {
+		return this.locatie = locatie;
+	}
+
+	public double getTarief() {
+		return this.instap;
+	}
+
 	public double tariefBerekenaar(Locatie lx, Locatie ly) {
-		int a = lx.getX() - locatie.getX();
-		int b = ly.getY() - locatie.getY();
-		int c = a*a + b*b;
+		double a = lx.getX() - locatie.getX();
+		double b = ly.getY() - locatie.getY();
+		double c = a * a + b * b;
 		double wortel = Math.sqrt(c);
-		return wortel;
+		double som = wortel * 2;
+		return this.instap = som;
 	}
 }

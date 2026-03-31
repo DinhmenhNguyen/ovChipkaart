@@ -10,7 +10,7 @@ public class OVChipkaart {
 	private double saldo;
 	private boolean ingecheckt = false;
 	private Locatie oorsprong;
-	private int kaartNummer;
+	private int kaartNummer = 1213821;
 
 	public OVChipkaart(double saldo) {
 		this.geldigheid = true;
@@ -33,10 +33,6 @@ public class OVChipkaart {
 		return this.kaartNummer;
 	}
 
-	public int setKaartNummer(int kaartNummer) {
-		return this.kaartNummer = kaartNummer;
-	}
-
 	public boolean getGeldigheid() {
 		return this.geldigheid;
 	}
@@ -44,6 +40,5 @@ public class OVChipkaart {
 	public void checkIn(double instap, Locatie l) {
 		this.ingecheckt = true;
 		this.oorsprong = l;
-		this.saldo = this.saldo - instap;
 	}
 }

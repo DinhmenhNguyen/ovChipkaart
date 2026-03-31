@@ -3,20 +3,17 @@ package OVChipkaart;
 public class Driver {
 
 	public static void main(String[] args) {
-
-		Locatie nijmegen = new Locatie(2, 6);
-		Locatie arnhem = new Locatie(12, 8);
-
-		Paal paal1 = new Paal(20.0, nijmegen);
 		
-		OVChipkaart ovChipkaart1 = new OVChipkaart(20.0);
-		ovChipkaart1.setKaartNummer(1213821);
+		OVChipkaart ovChipkaart1 = new OVChipkaart(25.0);
+		Locatie nijmegen = new Locatie(2.1, 6.3, "Nijmegen");
+		Locatie arnhem = new Locatie(12.5, 8.6, "Arnhem");
 
-		System.out
-				.println("Saldo: " + ovChipkaart1.getSaldo() + "\n" + "Kaartnummer: " + ovChipkaart1.getKaartNummer());
-		System.out.println(paal1.tariefBerekenaar(nijmegen, arnhem));
-		paal1.scan(ovChipkaart1);
-		System.out.println("Saldo: " + ovChipkaart1.getSaldo());
-
+		Paal paalInchecken = new Paal(nijmegen);
+		Paal paalUitchecken = new Paal(arnhem);
+		
+		paalInchecken.tariefBerekenaar(nijmegen, arnhem);		
+		paalInchecken.checkInScan(ovChipkaart1);
+		
+		paalUitchecken.checkUitScan(ovChipkaart1);
 	}
 }
