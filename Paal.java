@@ -17,12 +17,14 @@ public class Paal {
 		if (ovChip.getGeldigheid() == true) {
 			if (ovChip.getSaldo() >= 20.0 + this.instap) {
 				System.out.println("Transactie gaat door, poort gaat open");
-				ovChip.checkIn(this.instap, this.locatie);
+				ovChip.checkIn(this.locatie);
 				System.out.println("Kosten = €" + this.instap);
 				System.out.println(ovChip.getLocatie().getLocatie());
 			} else {
 				System.out.println("Transactie is gefaald, poort blijft dicht");
 			}
+		} else {
+			System.out.println("Kaart is niet geldig");
 		}
 	}
 
