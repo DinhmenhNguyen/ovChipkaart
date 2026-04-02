@@ -42,7 +42,12 @@ public class OVChipkaart {
 		this.oorsprong = l;
 	}
 	
-	public void checkOut() {
-		
+	public void checkOut(Locatie l) {
+		this.ingecheckt = false;
+		this.oorsprong = l;
+	}
+	
+	public void saldoAftrekken(double kosten) {
+		this.saldo = this.saldo - kosten;
 	}
 }
