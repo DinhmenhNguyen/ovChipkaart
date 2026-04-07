@@ -37,12 +37,12 @@ public class OVChipkaart {
 		return this.geldigheid;
 	}
 
-	public void checkIn(Locatie locatie) {
+	public void checkInLocatie(Locatie locatie) {
 		this.ingecheckt = true;
 		this.oorsprong = locatie;
 	}
 	
-	public void checkOut(Locatie locatie) {
+	public void checkUitLocatie(Locatie locatie) {
 		this.ingecheckt = false;
 		this.oorsprong = locatie;
 	}

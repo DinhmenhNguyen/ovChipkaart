@@ -17,7 +17,7 @@ public class Paal {
 		if (ovChip.getGeldigheid() == true) {
 			if (ovChip.getSaldo() >= 20.0 + this.instap) {
 				System.out.println("Transactie gaat door, poort gaat open");
-				ovChip.checkIn(this.locatie);
+				ovChip.checkInLocatie(this.locatie);
 				System.out.println("Kosten = €" + this.instap);
 				ovChip.saldoAftrekken(this.instap);
 				System.out.println("Saldo = €" + ovChip.getSaldo());
@@ -34,7 +34,7 @@ public class Paal {
 		if (ovChip.getLocatie() != this.locatie) {
 			if (ovChip.getGeldigheid() == true) {
 				System.out.println("Je bent uitgecheckt");
-				ovChip.checkIn(this.locatie);
+				ovChip.checkInLocatie(this.locatie);
 				System.out.println(ovChip.getLocatie().getLocatie());
 			}
 		}
