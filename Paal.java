@@ -48,9 +48,9 @@ public class Paal {
 		return this.instap;
 	}
 
-	public double tariefBerekenaar(Locatie lx, Locatie ly) {
-		double a = lx.getX() - locatie.getX();
-		double b = ly.getY() - locatie.getY();
+	public double tariefBerekenaar(Locatie x, Locatie y) {
+		double a = x.getX() - locatie.getX();
+		double b = y.getY() - locatie.getY();
 		double c = a * a + b * b;
 		double wortel = Math.sqrt(c);
 		double som = wortel * 2;
