@@ -16,12 +16,12 @@ public class Paal {
 	public void checkInScan(OVChipkaart ovChip) {
 		if (ovChip.getGeldigheid() == true) {
 			if (ovChip.getSaldo() >= 20.0 + this.instap) {
-				System.out.println("Transactie gaat door, poort gaat open");
 				ovChip.checkInLocatie(this.locatie);
 				System.out.println("Kosten = €" + this.instap);
+				System.out.println("Transactie gaat door, poort gaat open");
 				ovChip.saldoAftrekken(this.instap);
 				System.out.println("Saldo = €" + ovChip.getSaldo());
-				System.out.println(ovChip.getLocatie().getLocatie());
+				System.out.println(ovChip.getLocatie().getLocatie() + "\n");
 			} else {
 				System.out.println("Transactie is gefaald, poort blijft dicht");
 			}
@@ -32,10 +32,12 @@ public class Paal {
 
 	public void checkUitScan(OVChipkaart ovChip) {
 		if (ovChip.getLocatie() != this.locatie) {
-			if (ovChip.getGeldigheid() == true) {
-				System.out.println("Je bent uitgecheckt");
-				ovChip.checkInLocatie(this.locatie);
-				System.out.println(ovChip.getLocatie().getLocatie());
+			if (ovChip.getSaldo() > 20.0) {
+				if (ovChip.getGeldigheid() == true) {
+					System.out.println("Je bent uitgecheckt");
+					ovChip.checkInLocatie(this.locatie);
+					System.out.println(ovChip.getLocatie().getLocatie());
+				}
 			}
 		}
 	}

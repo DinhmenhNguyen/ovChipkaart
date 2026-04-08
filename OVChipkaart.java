@@ -20,6 +20,10 @@ public class OVChipkaart {
 	public double getSaldo() {
 		return this.saldo;
 	}
+	
+	public double setSaldo(double saldo) {
+		return this.saldo += saldo;
+	}
 
 	public boolean getCheck() {
 		return this.ingecheckt;
