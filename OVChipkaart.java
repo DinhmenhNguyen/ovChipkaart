@@ -7,14 +7,13 @@ public class OVChipkaart {
 	LocalDate tijd = LocalDate.now();
 
 	private boolean geldigheid = true;
-	private double saldo;
+	private double saldo = 20.0;
 	private boolean ingecheckt = false;
 	private Locatie oorsprong;
 	private int kaartNummer = 1213821;
 
-	public OVChipkaart(double saldo) {
+	public OVChipkaart() {
 		this.geldigheid = true;
-		this.saldo = saldo;
 	}
 
 	public double getSaldo() {
