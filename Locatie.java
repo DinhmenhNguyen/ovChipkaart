@@ -22,4 +22,12 @@ public class Locatie {
 	public String getLocatie(){
         return this.locatie;
     }
+	
+	public double afstandBerekenaar(Locatie andereLocatie) {
+		double a = this.x - andereLocatie.x;
+		double b = this.y - andereLocatie.y;
+		double c = a * a + b * b;
+		double wortel = Math.sqrt(c);
+		return wortel;
+	}
 }

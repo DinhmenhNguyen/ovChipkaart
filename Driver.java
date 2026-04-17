@@ -4,7 +4,8 @@ public class Driver {
 
 	public static void main(String[] args) {
 
-		OVChipkaart ovChipkaart1 = new OVChipkaart();
+		OVChipkaart ovChipkaart1 = new OVChipkaart(true);
+		OVChipkaart ovChipkaart2 = new OVChipkaart(false);
 		
 		NSAutomaat nsAutomaat = new NSAutomaat();
 		
@@ -13,11 +14,12 @@ public class Driver {
 
 		Paal paalInchecken = new Paal(nijmegen);
 		Paal paalUitchecken = new Paal(arnhem);
-		
-		nsAutomaat.opwaarderenMet(ovChipkaart1, 200);
-//		nsAutomaat.aanvullenTot(ovChipkaart1, 200);
 
-		paalInchecken.tariefBerekenaar(nijmegen, arnhem);
+		nsAutomaat.scan(ovChipkaart1);
+		nsAutomaat.opwaarderenMet(20);
+		nsAutomaat.stop();
+//		nsAutomaat.aanvullenTot(200);
+
 		paalInchecken.checkInScan(ovChipkaart1);
 
 		paalUitchecken.checkUitScan(ovChipkaart1);
